@@ -12,7 +12,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        Base {
             // ------------------------------------------------------------------------------------------------------------
             // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
             // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
@@ -22,17 +22,17 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                         &kp N6  &kp N7    &kp N8     &kp N9   &kp N0         &kp GRAVE
-&kp TAB    &kp Q   &kp W   &kp F     &kp P     &kp B                          &kp J   &kp L     &kp U      &kp Y    &kp SEMICOLON  &kp MINUS
-&kp LCTRL  &kp A   &kp R   &kp S     &kp T     &kp G                          &kp M   &kp N     &kp E      &kp I    &kp O          &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C     &kp D     &kp V   &kp LBKT     &kp RBKT  &kp K   &kp H     &kp COMMA  &kp DOT  &kp FSLH       &kp RSHFT
-                           &kp LALT  &kp LGUI  &mo 1   &kp SPACE    &kp RET   &mo 2   &kp BSPC  &kp RGUI
+&kp ESC    &kp N1          &kp N2          &kp N3       &kp N4            &kp N5                                 &kp N6           &kp N7             &kp N8       &kp N9           &kp N0           &kp BACKSPACE
+&kp TAB    &kp Q           &kp W           &kp F        &kp P             &kp B                                  &kp J            &kp L              &kp U        &kp Y            &kp SQT          &kp BACKSLASH
+&kp LCTRL  &mt LEFT_GUI A  &mt LEFT_ALT R  &mt LCTRL S  &mt LEFT_SHIFT T  &kp G                                  &kp M            &mt RIGHT_SHIFT N  &mt RCTRL E  &mt RIGHT_ALT I  &mt RIGHT_GUI O  &kp ENTER
+&kp LSHFT  &lt 3 Z         &kp X           &kp C        &kp D             &kp V      &kp LBKT       &kp RBKT     &kp K            &kp H              &kp COMMA    &kp DOT          &lt 3 FSLH       &kp RSHFT
+                                           &kp X        &lt 4 ESCAPE      &lt 1 TAB  &lt 2 SPACE    &lt 6 ENTER  &lt 5 BACKSPACE  &lt 7 DELETE       &kp N
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        lower_layer {
+        Nav {
             // ------------------------------------------------------------------------------------------------------------
             // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
             // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
@@ -40,7 +40,7 @@
             // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
             //                     |      |      |      |        |  |       |      |       |       |
 
-            display-name = "Lower";
+            display-name = "Nav";
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans     &trans           &trans    &trans    &trans
 &kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                          &kp F7     &kp F8     &kp F9           &kp F10   &kp F11   &kp F12
@@ -52,7 +52,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        raise_layer {
+        Mouse {
             // ------------------------------------------------------------------------------------------------------------
             // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
             // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
@@ -60,7 +60,7 @@
             // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
             //                     |      |      |      |        |  |       |      |       |       |
 
-            display-name = "Raise";
+            display-name = "Mouse";
             bindings = <
 &trans     &trans  &trans  &trans   &trans   &trans                     &trans       &trans     &trans     &trans    &trans     &trans
 &kp GRAVE  &kp N1  &kp N2  &kp N3   &kp N4   &kp N5                     &kp N6       &kp N7     &kp N8     &kp N9    &kp N0     &trans
@@ -72,10 +72,54 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        extra_1 { status = "reserved"; };
+        Button {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+        };
 
-        extra_2 { status = "reserved"; };
+        Media {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+        };
 
-        extra_3 { status = "reserved"; };
+        Num {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+        };
+
+        Sym {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+        };
+
+        Fun {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+        };
     };
 };
