@@ -1,1 +1,5 @@
-An attempt to adapt the Miryoku layout to my Lily58.
+A port of the Miryoku layout into [Keymap Editor](https://github.com/nickcoutsos/keymap-editor) for the Lily58.
+
+I wanted to be able to make changes to the layout in the future without having to do it via Miryoku Babel as I have zero coding experience. 
+
+Thanks. : )
