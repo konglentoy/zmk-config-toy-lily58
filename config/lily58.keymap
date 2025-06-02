@@ -11,69 +11,180 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
+&mmv {
+    delay-ms = <0>;
+    time-to-max-speed-ms = <1500>;
+    acceleration-exponent = <1>;
+};
+
 / {
     behaviors {
-        BASE: BASE {
+        u_to_U_base: u_to_U_base {
             compatible = "zmk,behavior-tap-dance";
-            label = "BASE";
+            label = "U_TO_U_BASE";
             #binding-cells = <0>;
             bindings = <&none>, <&to 0>;
         };
 
-        GAME: GAME {
+        u_to_U_game: u_to_U_game {
             compatible = "zmk,behavior-tap-dance";
-            label = "GAME";
+            label = "U_TO_U_GAME";
             #binding-cells = <0>;
-            bindings = <&none>, <&tog 8>;
+            bindings = <&none>, <&to 2>;
         };
 
-        LAYER_LOCK_NAV: LAYER_LOCK_NAV {
+        u_to_U_nav: u_to_U_nav {
             compatible = "zmk,behavior-tap-dance";
-            label = "LAYER_LOCK_NAV";
+            label = "U_TO_U_NAV";
             #binding-cells = <0>;
-            bindings = <&none>, <&tog 1>;
+            bindings = <&none>, <&to 4>;
         };
 
-        LAYER_LOCK_NUM: LAYER_LOCK_NUM {
+        u_to_U_num: u_to_U_num {
             compatible = "zmk,behavior-tap-dance";
-            label = "LAYER_LOCK_NUM";
+            label = "U_TO_U_NUM";
             #binding-cells = <0>;
-            bindings = <&none>, <&tog 5>;
+            bindings = <&none>, <&to 7>;
         };
 
-        LAYER_LOCK_MEDIA: LAYER_LOCK_MEDIA {
+        u_to_U_media: u_to_U_media {
             compatible = "zmk,behavior-tap-dance";
-            label = "LAYER_LOCK_MEDIA";
+            label = "U_TO_U_MEDIA";
             #binding-cells = <0>;
-            bindings = <&none>, <&tog 4>;
+            bindings = <&none>, <&to 6>;
         };
 
-        LAYER_LOCK_FUN: LAYER_LOCK_FUN {
+        u_to_U_fun: u_to_U_fun {
             compatible = "zmk,behavior-tap-dance";
-            label = "LAYER_LOCK_FUN";
+            label = "U_TO_U_FUN";
             #binding-cells = <0>;
-            bindings = <&none>, <&tog 7>;
+            bindings = <&none>, <&to 9>;
         };
 
-        LAYER_LOCK_MOUSE: LAYER_LOCK_MOUSE {
+        u_to_U_mouse: u_to_U_mouse {
             compatible = "zmk,behavior-tap-dance";
-            label = "LAYER_LOCK_MOUSE";
+            label = "U_TO_U_MOUSE";
             #binding-cells = <0>;
-            bindings = <&none>, <&tog 2>;
+            bindings = <&none>, <&to 5>;
         };
 
-        LAYER_LOCK_SYM: LAYER_LOCK_SYM {
+        u_to_U_sym: u_to_U_sym {
             compatible = "zmk,behavior-tap-dance";
-            label = "LAYER_LOCK_SYM";
+            label = "U_TO_U_SYM";
             #binding-cells = <0>;
-            bindings = <&none>, <&tog 6>;
+            bindings = <&none>, <&to 8>;
         };
 
-        BOOTLOADER: BOOTLOADER {
+        u_bootloader: u_bootloader {
             compatible = "zmk,behavior-tap-dance";
-            label = "BOOTLOADER";
+            label = "U_BOOTLOADER";
             #binding-cells = <0>;
-            bindings = <&none>, <&bootloader>;
+            bindings = <&none>, <&u_bootloader>;
+        };
+
+        u_bt_sel_0: u_bt_sel_0 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "U_BT_SEL_0";
+            bindings = <&bt BT_SEL 0>, <&u_macro_u_bt_sel_0>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        u_bt_sel_1: u_bt_sel_1 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "U_BT_SEL_1";
+            bindings = <&bt BT_SEL 1>, <&u_macro_u_bt_sel_1>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        u_bt_sel_2: u_bt_sel_2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "U_BT_SEL_2";
+            bindings = <&bt BT_SEL 2>, <&u_macro_u_bt_sel_2>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        u_bt_sel_3: u_bt_sel_3 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "U_BT_SEL_3";
+            bindings = <&bt BT_SEL 3>, <&u_macro_u_bt_sel_3>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        u_bt_sel_4: u_bt_sel_4 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "U_BT_SEL_4";
+            bindings = <&bt BT_SEL 4>, <&u_macro_u_bt_sel_4>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        u_out_tog: u_out_tog {
+            compatible = "zmk,behavior-mod-morph";
+            label = "U_OUT_TOG";
+            bindings = <&out OUT_TOG>, <&out OUT_USB>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        u_caps_word: u_caps_word {
+            compatible = "zmk,behavior-mod-morph";
+            label = "U_CAPS_WORD";
+            bindings = <&caps_word>, <&kp CAPS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        u_to_U_qwerty: u_to_U_qwerty {
+            compatible = "zmk,behavior-tap-dance";
+            label = "U_TO_U_QWERTY";
+            #binding-cells = <0>;
+            bindings = <&none>, <&to 1>;
+        };
+
+        home_row_mod_left: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_ROW_MOD_LEFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            quick-tap-ms = <175>;
+            tapping-term-ms = <280>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <30 31 32 33 34 18 19 20 21 22 30 31 32 33 34 44 45 46 47 48 6 7 8 9 10 49 11 23 35>;
+        };
+
+        home_row_mod_right: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_ROW_MOD_RIGHT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 37 38 39 40 41 36>;
+            hold-trigger-on-release;
+        };
+
+        u_to_U_button: u_to_U_button {
+            compatible = "zmk,behavior-tap-dance";
+            label = "U_TO_U_BUTTON";
+            #binding-cells = <0>;
+            bindings = <&none>, <&to 3>;
         };
     };
 
@@ -87,10 +198,47 @@
         };
     };
 
+    macros {
+        u_macro_u_bt_sel_0: u_macro_u_bt_sel_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0 &bt BT_CLR>;
+            label = "U_MACRO_U_BT_SEL_0";
+        };
+
+        u_macro_u_bt_sel_1: u_macro_u_bt_sel_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1 &bt BT_CLR>;
+            label = "U_MACRO_U_BT_SEL_1";
+        };
+
+        u_macro_u_bt_sel_2: u_macro_u_bt_sel_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 2 &bt BT_CLR>;
+            label = "U_MACRO_U_BT_SEL_2";
+        };
+
+        u_macro_u_bt_sel_3: u_macro_u_bt_sel_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 3 &bt BT_CLR>;
+            label = "U_MACRO_U_BT_SEL_3";
+        };
+
+        u_macro_u_bt_sel_4: u_macro_u_bt_sel_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 4 &bt BT_CLR>;
+            label = "U_MACRO_U_BT_SEL_4";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        Base {
+        BASE {
             // ------------------------------------------------------------------------------------------------------------
             // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
             // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
@@ -98,17 +246,55 @@
             // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
-            display-name = "Base";
+            display-name = "BASE";
             bindings = <
-&kp ESC    &kp N1          &kp N2          &kp N3       &kp N4            &kp N5                                 &kp N6           &kp N7             &kp N8       &kp N9           &kp N0           &kp BACKSPACE
-&kp TAB    &kp Q           &kp W           &kp F        &kp P             &kp B                                  &kp J            &kp L              &kp U        &kp Y            &kp SQT          &kp BACKSLASH
-&kp LCTRL  &mt LEFT_GUI A  &mt LEFT_ALT R  &mt LCTRL S  &mt LEFT_SHIFT T  &kp G                                  &kp M            &mt RIGHT_SHIFT N  &mt RCTRL E  &mt RIGHT_ALT I  &mt RIGHT_GUI O  &kp ENTER
-&kp LSHFT  &lt 3 Z         &kp X           &kp C        &kp D             &kp V      &mkp MB4       &tog 8       &kp K            &kp H              &kp COMMA    &kp DOT          &lt 3 FSLH       &kp RSHFT
-                                           &kp X        &lt 4 ESCAPE      &lt 1 TAB  &lt 2 SPACE    &lt 6 ENTER  &lt 5 BACKSPACE  &lt 7 DELETE       &kp N
+&kp ESC    &kp N1                         &kp N2                         &kp N3                      &kp N4                           &kp N5                                 &kp N6           &kp N7                            &kp N8                              &kp N9                          &kp N0                          &kp BACKSPACE
+&kp TAB    &kp Q                          &kp W                          &kp F                       &kp P                            &kp B                                  &kp J            &kp L                             &kp U                               &kp Y                           &kp SQT                         &kp BACKSLASH
+&kp LCTRL  &home_row_mod_left LEFT_GUI A  &home_row_mod_left LEFT_ALT R  &home_row_mod_left LCTRL S  &home_row_mod_left LEFT_SHIFT T  &kp G                                  &kp M            &home_row_mod_right LEFT_SHIFT N  &home_row_mod_right LEFT_CONTROL E  &home_row_mod_right LEFT_ALT I  &home_row_mod_right LEFT_GUI O  &kp ENTER
+&kp LSHFT  &lt 3 Z                        &home_row_mod_left RALT X      &kp C                       &kp D                            &kp V        &kp X        &kp N        &kp K            &kp H                             &kp COMMA                           &home_row_mod_right RALT DOT    &lt 3 FSLH                      &kp RSHFT
+                                                                         &kp X                       &lt 6 ESCAPE                     &lt 4 SPACE  &lt 5 TAB    &lt 8 ENTER  &lt 7 BACKSPACE  &lt 9 DELETE                      &kp N
             >;
         };
 
-        Nav {
+        EXTRA {
+            display-name = "BASE";
+            bindings = <
+&kp ESC    &kp N1                         &kp N2                         &kp N3                      &kp N4                           &kp N5                                 &kp N6           &kp N7                            &kp N8                              &kp N9                          &kp N0                            &kp BACKSPACE
+&kp TAB    &kp Q                          &kp W                          &kp E                       &kp R                            &kp T                                  &kp Y            &kp U                             &kp I                               &kp O                           &kp P                             &kp BACKSLASH
+&kp LCTRL  &home_row_mod_left LEFT_GUI A  &home_row_mod_left LEFT_ALT S  &home_row_mod_left LCTRL D  &home_row_mod_left LEFT_SHIFT F  &kp G                                  &kp H            &home_row_mod_right LEFT_SHIFT J  &home_row_mod_right LEFT_CONTROL K  &home_row_mod_right LEFT_ALT L  &home_row_mod_right LEFT_GUI SQT  &kp ENTER
+&kp LSHFT  &lt 3 Z                        &home_row_mod_left RALT X      &kp C                       &kp V                            &kp B        &kp X        &kp N        &kp N            &kp M                             &kp COMMA                           &home_row_mod_right RALT DOT    &lt 3 FSLH                        &kp RSHFT
+                                                                         &kp X                       &lt 6 ESCAPE                     &lt 4 SPACE  &lt 5 TAB    &lt 8 ENTER  &lt 7 BACKSPACE  &lt 9 DELETE                      &kp N
+            >;
+
+            label = "Extra";
+        };
+
+        GAME {
+            display-name = "Alternate";
+            bindings = <
+&kp ESC    &mt F1 NUMBER_1  &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 NUMBER_5                         &mt F6 NUMBER_6  &mt F7 NUMBER_7  &mt F8 NUMBER_8  &mt F9 NUMBER_9  &mt F10 NUMBER_0  &kp BACKSPACE
+&kp TAB    &kp Q            &kp W            &kp E            &kp R            &kp T                                   &kp Y            &kp I            &kp O            &kp U            &kp P             &kp BACKSLASH
+&kp LCTRL  &kp A            &kp S            &kp D            &kp F            &kp G                                   &kp H            &kp J            &kp K            &kp L            &kp SQT           &kp ENTER
+&kp LSHFT  &kp Z            &kp X            &kp C            &kp V            &kp B            &mkp MB5    &none      &kp N            &kp M            &kp COMMA        &kp DOT          &kp SLASH         &kp RSHFT
+                                             &kp LEFT_GUI     &kp ESCAPE       &kp SPACE        &mkp MB4    &kp ENTER  &kp BACKSPACE    &kp DEL          &kp LA(TAB)
+            >;
+
+            label = "Game";
+        };
+
+        BUTTON {
+            bindings = <
+&none  &none         &none         &none      &none       &none                            &none      &none           &none      &none         &none         &none
+&none  &kp LC(Z)     &kp LC(X)     &kp LC(C)  &kp LC(V)   &kp LC(Y)                        &kp LC(Y)  &kp LC(V)       &kp LC(C)  &kp LC(X)     &kp LC(Z)     &none
+&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp LSHIFT  &none                            &none      &kp LEFT_SHIFT  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_WIN  &none
+&none  &kp LC(Z)     &kp LC(X)     &kp LC(C)  &kp LC(V)   &kp LC(Y)  &none       &none     &kp LC(Y)  &kp LC(V)       &kp LC(C)  &kp LC(X)     &kp LC(Z)     &none
+                                   &none      &mkp MB3    &mkp MB1   &mkp MB2    &mkp MB2  &mkp MB1   &mkp MB3        &none
+            >;
+
+            label = "Button";
+        };
+
+        NAV {
             // ------------------------------------------------------------------------------------------------------------
             // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
             // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
@@ -118,83 +304,72 @@
 
             display-name = "Nav";
             bindings = <
-&none  &none         &none         &none            &none            &none                       &none          &none      &none          &none         &none      &none
-&none  &BOOTLOADER   &none         &GAME            &BASE            &none                       &kp LC(Y)      &kp LC(V)  &kp LC(C)      &kp LC(X)     &kp LC(Z)  &none
-&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL        &kp LEFT_SHIFT   &none                       &kp CLCK       &kt LEFT   &kp DOWN       &kp UP_ARROW  &kp RIGHT  &none
-&none  &none         &none         &LAYER_LOCK_NUM  &LAYER_LOCK_NAV  &none  &trans    &trans     &kp INS        &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &none
-                                   &none            &none            &none  &none     &kp ENTER  &kp BACKSPACE  &kp DEL    &none
+&none  &none          &none           &none         &none           &none                      &none          &none      &none          &none         &none      &none
+&none  &u_bootloader  &u_to_U_qwerty  &u_to_U_game  &u_to_U_base    &none                      &kp LC(Y)      &kp LC(V)  &kp LC(C)      &kp LC(X)     &kp LC(Z)  &none
+&none  &kp LEFT_GUI   &kp LEFT_ALT    &kp LCTRL     &kp LEFT_SHIFT  &none                      &u_caps_word   &kt LEFT   &kp DOWN       &kp UP_ARROW  &kp RIGHT  &none
+&none  &none          &kp RALT        &u_to_U_num   &u_to_U_nav     &none  &none    &none      &kp INS        &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &none
+                                      &none         &none           &none  &none    &kp ENTER  &kp BACKSPACE  &kp DEL    &none
             >;
         };
 
-        Mouse {
+        MOUSE {
             bindings = <
-&none  &none         &none         &none            &none              &none                      &none      &none           &none           &none         &none            &none
-&none  &BOOTLOADER   &none         &GAME            &BASE              &none                      &kp LC(Y)  &kp LC(V)       &kp LC(C)       &kp LC(X)     &kp LC(Z)        &none
-&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL        &kp LEFT_SHIFT     &none                      &none      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
-&none  &none         &none         &LAYER_LOCK_SYM  &LAYER_LOCK_MOUSE  &none  &trans    &trans    &none      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
-                                   &none            &none              &none  &none     &mkp MB2  &mkp MB1   &mkp MB3        &none
+&none  &none          &none           &none         &none           &none                     &none      &none           &none           &none         &none            &none
+&none  &u_bootloader  &u_to_U_qwerty  &u_to_U_game  &u_to_U_base    &none                     &kp LC(Y)  &kp LC(V)       &kp LC(C)       &kp LC(X)     &kp LC(Z)        &none
+&none  &kp LEFT_GUI   &kp LEFT_ALT    &kp LCTRL     &kp LEFT_SHIFT  &none                     &none      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
+&none  &none          &kp RALT        &u_to_U_sym   &u_to_U_mouse   &none  &none    &none     &none      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
+                                      &none         &none           &none  &none    &mkp MB2  &mkp MB1   &mkp MB3        &none
             >;
+
+            label = "Mouse";
         };
 
-        Button {
+        MEDIA {
             bindings = <
-&none  &none         &none         &none      &none       &none                            &none      &none           &none      &none         &none         &none
-&none  &kp LC(Z)     &kp LC(X)     &kp LC(C)  &kp LC(V)   &kp LC(Y)                        &kp LC(Y)  &kp LC(V)       &kp LC(C)  &kp LC(X)     &kp LC(Z)     &none
-&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp LSHIFT  &none                            &none      &kp LEFT_SHIFT  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_WIN  &none
-&none  &kp LC(Z)     &kp LC(X)     &kp LC(C)  &kp LC(V)   &kp LC(Y)  &trans      &trans    &kp LC(Y)  &kp LC(V)       &kp LC(C)  &kp LC(X)     &kp LC(Z)     &none
-                                   &none      &mkp MB3    &mkp MB1   &mkp MB2    &mkp MB2  &mkp MB1   &mkp MB3        &none
+&none  &none          &none           &none         &none           &none                       &none              &none        &none                 &none                 &none        &none
+&none  &u_bootloader  &u_to_U_qwerty  &u_to_U_game  &u_to_U_base    &none                       &kp LG(TAB)        &kp LG(E)    &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none        &none
+&none  &kp LEFT_GUI   &kp LEFT_ALT    &kp LCTRL     &kp LEFT_SHIFT  &none                       &ext_power EP_TOG  &kp C_PREV   &kp C_VOL_DN          &kp C_VOL_UP          &kp C_NEXT   &none
+&none  &none          &kp RALT        &u_to_U_fun   &u_to_U_media   &none  &none    &none       &u_out_tog         &u_bt_sel_0  &u_bt_sel_1           &u_bt_sel_2           &u_bt_sel_3  &u_bt_sel_4
+                                      &none         &none           &none  &none    &kp C_STOP  &kp C_PLAY_PAUSE   &kp C_MUTE   &none
             >;
+
+            label = "Media";
         };
 
-        Media {
+        NUM {
             bindings = <
-&none  &none         &none         &none            &none              &none                              &none              &none          &none          &none          &none          &none
-&none  &BOOTLOADER   &none         &GAME            &BASE              &none                              &none              &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_CLR
-&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL        &kp LEFT_SHIFT     &none                              &ext_power EP_TOG  &kp C_PREV     &kp C_VOL_DN   &kp C_VOL_UP   &kp C_NEXT     &none
-&none  &none         &none         &LAYER_LOCK_FUN  &LAYER_LOCK_MEDIA  &none  &trans    &trans            &out OUT_TOG       &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &none
-                                   &none            &none              &none  &none     &kp C_STOP_EJECT  &kp C_PLAY_PAUSE   &kp C_MUTE     &none
+&none  &none             &none         &none         &none         &none                                  &none  &none           &none         &none           &none          &none
+&none  &kp LEFT_BRACKET  &kp N7        &kp N8        &kp N9        &kp RIGHT_BRACKET                      &none  &u_to_U_base    &u_to_U_game  &u_to_U_qwerty  &u_bootloader  &none
+&none  &kp SEMICOLON     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL                              &none  &kp LEFT_SHIFT  &kp LCTRL     &kp LEFT_ALT    &kp LEFT_GUI   &none
+&none  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH      &none        &none  &none  &u_to_U_num     &u_to_U_nav   &kp RALT        &none          &none
+                                       &none         &kp PERIOD    &kp NUMBER_0       &kp MINUS    &none  &none  &none           &none
             >;
+
+            label = "Num";
         };
 
-        Num {
+        SYM {
             bindings = <
-&none  &none             &none         &none         &none         &none                                   &none  &none            &none            &none         &none         &none
-&none  &kp LEFT_BRACKET  &kp N7        &kp N8        &kp N9        &kp RIGHT_BRACKET                       &none  &BASE            &GAME            &none         &BOOTLOADER   &none
-&none  &kp SEMICOLON     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL                               &none  &kp LEFT_SHIFT   &kp LCTRL        &kp LEFT_ALT  &kp LEFT_GUI  &none
-&none  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH      &trans       &trans  &none  &LAYER_LOCK_NUM  &LAYER_LOCK_NAV  &none         &none         &none
-                                       &none         &kp PERIOD    &kp NUMBER_0       &kp MINUS    &none   &none  &none            &none
+&none  &none           &none            &none        &none                 &none                                      &none  &none           &none          &none           &none          &none
+&none  &kp LEFT_BRACE  &kp AMPS         &kp ASTRK    &kp LEFT_PARENTHESIS  &kp RIGHT_BRACE                            &none  &u_to_U_base    &u_to_U_game   &u_to_U_qwerty  &u_bootloader  &none
+&none  &kp COLON       &kp DOLLAR       &kp PERCENT  &kp CARET             &kp PLUS                                   &none  &kp LEFT_SHIFT  &kp LCTRL      &kp LEFT_ALT    &kp LEFT_GUI   &none
+&none  &kp TILDE       &kp EXCLAMATION  &kp AT_SIGN  &kp HASH              &kp PIPE               &none        &none  &none  &u_to_U_sym     &u_to_U_mouse  &kp RALT        &none          &none
+                                        &none        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDER    &none  &none  &none           &none
             >;
+
+            label = "Sym";
         };
 
-        Sym {
+        FUN {
             bindings = <
-&none  &none           &none            &none        &none                 &none                                       &none  &none            &none              &none         &none         &none
-&none  &kp LEFT_BRACE  &kp AMPS         &kp ASTRK    &kp LEFT_PARENTHESIS  &kp RIGHT_BRACE                             &none  &BASE            &GAME              &none         &BOOTLOADER   &none
-&none  &kp COLON       &kp DOLLAR       &kp PERCENT  &kp CARET             &kp PLUS                                    &none  &kp LEFT_SHIFT   &kp LCTRL          &kp LEFT_ALT  &kp LEFT_GUI  &none
-&none  &kp TILDE       &kp EXCLAMATION  &kp AT_SIGN  &kp HASH              &kp PIPE               &trans       &trans  &none  &LAYER_LOCK_SYM  &LAYER_LOCK_MOUSE  &none         &none         &none
-                                        &none        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDER    &none   &none  &none            &none
+&none  &none    &none   &none   &none      &none                              &none  &none           &none          &none           &none          &none
+&none  &kp F12  &kp F2  &kp F8  &kp F9     &kp PRINTSCREEN                    &none  &u_to_U_base    &u_to_U_game   &u_to_U_qwerty  &u_bootloader  &none
+&none  &kp F11  &kp F4  &kp F5  &kp F6     &kp SCROLLLOCK                     &none  &kp LEFT_SHIFT  &kp LCTRL      &kp LEFT_ALT    &kp LEFT_GUI   &none
+&none  &kp F10  &kp F1  &kp F2  &kp F3     &kp PAUSE_BREAK  &none      &none  &none  &u_to_U_fun     &u_to_U_media  &kp RALT        &none          &none
+                        &none   &kp K_APP  &kp SPACE        &kp TAB    &none  &none  &none           &none
             >;
-        };
 
-        Fun {
-            bindings = <
-&none  &none    &none   &none   &none      &none                                 &none  &none            &none              &none         &none         &none
-&none  &kp F12  &kp F2  &kp F8  &kp F9     &kp PRINTSCREEN                       &none  &BASE            &GAME              &none         &BOOTLOADER   &none
-&none  &kp F11  &kp F4  &kp F5  &kp F6     &kp SCROLLLOCK                        &none  &kp LEFT_SHIFT   &kp LCTRL          &kp LEFT_ALT  &kp LEFT_GUI  &none
-&none  &kp F10  &kp F1  &kp F2  &kp F3     &kp PAUSE_BREAK  &trans       &trans  &none  &LAYER_LOCK_FUN  &LAYER_LOCK_MEDIA  &none         &none         &none
-                        &none   &kp K_APP  &kp TAB          &kp SPACE    &none   &none  &none            &none
-            >;
-        };
-
-        GAMING {
-            display-name = "Alternate";
-            bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3        &kp N4      &kp N5                           &kp N6         &kp N7   &kp N8       &kp N9   &kp N0     &kp BACKSPACE
-&kp TAB    &kp Q   &kp W   &kp E         &kp R       &kp T                            &kp Y          &kp I    &kp O        &kp U    &kp P      &kp BACKSLASH
-&kp LCTRL  &kp A   &kp S   &kp D         &kp F       &kp G                            &kp H          &kp J    &kp K        &kp L    &kp SQT    &kp ENTER
-&kp LSHFT  &kp Z   &kp X   &kp C         &kp V       &kp B    &trans       &trans     &kp N          &kp M    &kp COMMA    &kp DOT  &kp SLASH  &kp RSHFT
-                           &kp LEFT_GUI  &kp ESCAPE  &kp TAB  &kp SPACE    &kp ENTER  &kp BACKSPACE  &kp DEL  &kp LA(TAB)
-            >;
+            label = "Fun";
         };
     };
 };
