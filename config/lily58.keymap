@@ -18,8 +18,17 @@
     acceleration-exponent = <1>;
 };
 
+&trackpad_listener {
+    input-processors = <&zip_temp_layer 3 2000>
+
 / {
     behaviors {
+        zip_temp_layer: zip_temp_layer {
+            compatible = "zmk,input-processor-temp-layer";
+            #input-processor-cells = <2>;
+            require-prior-idle-ms = <1000>;
+            excluded-positions = <13 14 15 16 17 25 26 27 28 37 38 39 40 41 41 51 52 53 29>;
+        };
         u_to_U_base: u_to_U_base {
             compatible = "zmk,behavior-tap-dance";
             label = "U_TO_U_BASE";
