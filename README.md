@@ -1,4 +1,4 @@
-##A port of the Miryoku layout into [Keymap Editor](https://github.com/nickcoutsos/keymap-editor) for the Lily58.
+<h2> A port of the Miryoku layout into [Keymap Editor](https://github.com/nickcoutsos/keymap-editor) for the Lily58. </h2>h2>
 
 I wanted to be able to make changes to the layout in the future without having to do it via [Miryoku Babel](https://github.com/manna-harbour/miryoku_babel) as I have zero coding experience. 
 
@@ -6,4 +6,4 @@ Please do keep in mind that this is meant specifically for the Lily58 Wireless f
 
 Thanks. : )
 
-[Layout](./lily58.png)
+<img src='./lily58.png?raw=true'>
