@@ -17,7 +17,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "BASE";
             #binding-cells = <0>;
-            bindings = <&none>, <&tog 0>;
+            bindings = <&none>, <&to 0>;
         };
 
         GAME: GAME {
@@ -74,6 +74,16 @@
             label = "BOOTLOADER";
             #binding-cells = <0>;
             bindings = <&none>, <&bootloader>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        DUALLOCK {
+            bindings = <&kp CAPS>;
+            key-positions = <28 31>;
+            layers = <0>;
         };
     };
 
