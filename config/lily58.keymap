@@ -240,7 +240,7 @@
         compatible = "zmk,keymap";
 
         BASE {
-            display-name = "BASE";
+            display-name = "Base";
             bindings = <
 &kp ESC    &kp N1                         &kp N2                         &kp N3                      &kp N4                           &kp N5                                 &kp N6           &kp N7                            &kp N8                              &kp N9                          &kp N0                          &kp BACKSPACE
 &kp TAB    &kp Q                          &kp W                          &kp F                       &kp P                            &kp B                                  &kp J            &kp L                             &kp U                               &kp Y                           &kp SQT                         &kp BACKSLASH
@@ -248,10 +248,13 @@
 &kp LSHFT  &lt 3 Z                        &home_row_mod_left RALT X      &kp C                       &kp D                            &kp V        &kp X        &kp N        &kp K            &kp H                             &kp COMMA                           &home_row_mod_right RALT DOT    &lt 3 FSLH                      &kp RSHFT
                                                                          &kp X                       &lt 6 ESCAPE                     &lt 4 SPACE  &lt 5 TAB    &lt 8 ENTER  &lt 7 BACKSPACE  &lt 9 DELETE                      &kp N
             >;
+
+            label = "Base";
+            
         };
 
         EXTRA {
-            display-name = "BASE";
+            display-name = "Extra";
             bindings = <
 &kp ESC    &kp N1                         &kp N2                         &kp N3                      &kp N4                           &kp N5                                 &kp N6           &kp N7                            &kp N8                              &kp N9                          &kp N0                            &kp BACKSPACE
 &kp TAB    &kp Q                          &kp W                          &kp E                       &kp R                            &kp T                                  &kp Y            &kp U                             &kp I                               &kp O                           &kp P                             &kp BACKSLASH
@@ -264,7 +267,7 @@
         };
 
         GAME {
-            display-name = "Alternate";
+            display-name = "Game";
             bindings = <
 &kp ESC    &mt F1 NUMBER_1  &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 NUMBER_5                         &mt F6 NUMBER_6  &mt F7 NUMBER_7  &mt F8 NUMBER_8  &mt F9 NUMBER_9  &mt F10 NUMBER_0  &kp BACKSPACE
 &kp TAB    &kp Q            &kp W            &kp E            &kp R            &kp T                                   &kp Y            &kp I            &kp O            &kp U            &kp P             &kp BACKSLASH
@@ -277,6 +280,7 @@
         };
 
         BUTTON {
+            display-name = "Button";
             bindings = <
 &none  &none         &none         &none      &none       &none                            &none      &none           &none      &none         &none         &none
 &none  &kp LC(Z)     &kp LC(X)     &kp LC(C)  &kp LC(V)   &kp LC(Y)                        &kp LC(Y)  &kp LC(V)       &kp LC(C)  &kp LC(X)     &kp LC(Z)     &none
@@ -297,9 +301,13 @@
 &none  &none          &kp RALT        &u_to_U_num   &u_to_U_nav     &none  &none    &none      &kp INS        &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &none
                                       &none         &none           &none  &none    &kp ENTER  &kp BACKSPACE  &kp DEL    &none
             >;
+
+        label = "Nav";
+
         };
 
         MOUSE {
+            display-name = "Mouse";
             bindings = <
 &none  &none          &none           &none         &none           &none                     &none      &none           &none           &none         &none            &none
 &none  &u_bootloader  &u_to_U_qwerty  &u_to_U_game  &u_to_U_base    &none                     &kp LC(Y)  &kp LC(V)       &kp LC(C)       &kp LC(X)     &kp LC(Z)        &none
@@ -312,6 +320,7 @@
         };
 
         MEDIA {
+            display-name = "Media";
             bindings = <
 &none  &none          &none           &none         &none           &none                       &none              &none        &none                 &none                 &none        &none
 &none  &u_bootloader  &u_to_U_qwerty  &u_to_U_game  &u_to_U_base    &none                       &kp LG(TAB)        &kp LG(E)    &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none        &none
@@ -324,6 +333,7 @@
         };
 
         NUM {
+            display-name = "Num";
             bindings = <
 &none  &none             &none         &none         &none         &none                                  &none  &none           &none         &none           &none          &none
 &none  &kp LEFT_BRACKET  &kp N7        &kp N8        &kp N9        &kp RIGHT_BRACKET                      &none  &u_to_U_base    &u_to_U_game  &u_to_U_qwerty  &u_bootloader  &none
@@ -336,6 +346,7 @@
         };
 
         SYM {
+            display-name = "Sym"
             bindings = <
 &none  &none           &none            &none        &none                 &none                                      &none  &none           &none          &none           &none          &none
 &none  &kp LEFT_BRACE  &kp AMPS         &kp ASTRK    &kp LEFT_PARENTHESIS  &kp RIGHT_BRACE                            &none  &u_to_U_base    &u_to_U_game   &u_to_U_qwerty  &u_bootloader  &none
@@ -348,6 +359,7 @@
         };
 
         FUN {
+            display-name = "Fun"
             bindings = <
 &none  &none    &none   &none   &none      &none                              &none  &none           &none          &none           &none          &none
 &none  &kp F12  &kp F2  &kp F8  &kp F9     &kp PRINTSCREEN                    &none  &u_to_U_base    &u_to_U_game   &u_to_U_qwerty  &u_bootloader  &none
