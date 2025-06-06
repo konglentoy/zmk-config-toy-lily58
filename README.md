@@ -6,4 +6,7 @@ Please do keep in mind that this is meant specifically for the Lily58 Wireless f
 
 Thanks. : )
 
+Known Issues:
+- keybr seems to misbehave egregiously with this layout; however, there is a workaround in place. If you use specifically the GAME layout, keybr will behave "correctly" provided you've set it to be on Language: English - Layout: Colemak-DH - ✅ Emulate Layout - Geometry: Matrix/Ergonomic.
+
 <img src='./lily58.png?raw=true'>
