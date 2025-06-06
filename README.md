@@ -9,4 +9,11 @@ Thanks. : )
 Known Issues:
 - keybr seems to misbehave egregiously with this layout; however, there is a workaround in place. If you use specifically the GAME layout, keybr will behave "correctly" provided you've set it to be on Language: English - Layout: Colemak-DH - ✅ Emulate Layout - Geometry: Matrix/Ergonomic.
 
-<img src='./lily58.png?raw=true'>
+Credits
+- [Miryoku](https://github.com/manna-harbour/miryoku/)
+- [Keymap Editor](https://nickcoutsos.github.io/keymap-editor/)
+- [Keymap Drawer](https://keymap-drawer.streamlit.app/)
+- [nice!view gem](https://github.com/M165437/nice-view-gem)
+- [Typeractive Firmware](https://docs.typeractive.xyz/build-guides/lily58-wireless/firmware)
+
+<img src='./lily58.svg'>
